@@ -18,7 +18,7 @@ namespace GremlinNetSample
 
         static void Main(string[] args)
         {
-            var gremlinServer = new GremlinServer(hostname, port, enableSsl: true, username: "/dbs/AsIsModel/colls/AsIsModel", password: authKey);
+            var gremlinServer = new GremlinServer(hostname, port, enableSsl: true, username: "/dbs/" + database + "/colls/" + collection, password: authKey);
             var query = @"g.V()";
 
             using (var gremlinClient = new GremlinClient(gremlinServer))
